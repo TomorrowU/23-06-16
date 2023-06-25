@@ -15,7 +15,33 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
 
-<title>create.jsp</title>
+<link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+
+<title></title>
+<style>
+* {
+	margin: 0;
+	padding:0;
+	font-family: 'GmarketSans';
+	font-size: 26px;
+}	
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	text-align: center;
+	background-color: #242424;
+	color:#78b862;
+}
+
+#create {
+	background-color: #242424;
+}
+
+</style>
+
 </head>
 <script>
 // Check javascript has loaded
@@ -49,11 +75,10 @@ $(document).ready(function(){
 });
 </script>
 <body>
-<h1>User Create 회원가입</h1>
-<hr>
+<div id="create" class="container-fluid p-5  text-white text-center">
+<h1>USER 회원가입</h1>
+</div>
 <a href="/">Home</a>
-<hr>
-<a href="/user/login">/user/login</a>
 <hr>
 <section class="container">
 	<form action="/user/create" method="post">
@@ -64,13 +89,13 @@ $(document).ready(function(){
 		<div class="mb-3">
 			<label class="form-lable mb-2" for="password">password<span>*</span></label>
 			<input class="form-control"  type="password"      id="password"  name="password"  placeholder="비밀번호를 입력하세요." value="${user.password}"/>
-			<input type="button" id="showPassword" value="show" class="mt-1 btn" style="border: solid gray 2px;" /></p>
+			<input type="button"  id="showPassword" value="show" class="mt-1 btn" style="border: solid gray 2px; background-color:  #78b862;" /></p>
 		</div>
 		<div class="mb-3">
 			<label class="form-lable mb-2" for="role">이메일</label>
 			<input class="form-control"    id="role"	   name="role"    placeholder="메일주소를 입력해주세요." value=""/>
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn " style="background: #78b862; ">Submit</button>
 	</form>	
 </section>
 <hr>

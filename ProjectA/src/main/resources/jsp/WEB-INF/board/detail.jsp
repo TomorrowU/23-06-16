@@ -24,7 +24,7 @@
 	margin: 0;
 	padding:0;
 	font-family: 'GmarketSans';
-	font-size: 22px;
+	font-size: 30px;
 }	
 
 li {
@@ -165,22 +165,24 @@ number li a {
 
 
 <body>
-<div class="container-fluid p-5 bg-primary text-white text-center">
-<h1>게시판</h1>
+<div class="container-fluid p-5  text-center" style="background-color:  #242424; color: #78b862" >
+<h1>Community</h1>
 <sec:authorize access="isAuthenticated()">
 		<h2 style="text-align: center; margin-top: 40px;"><sec:authentication property="name"/>님 환영합니다</h2>
 </sec:authorize>
 </div>
 
 
+<div class="container">
 <a href="/board/update?bno"></a>	
 	<menu class="btn-group">
-	<a href="/board/page/1/5" class="btn btn-primary">list</a>
-	<a href="/board/update?bno=${detail.bno}" class="btn btn-secondary">수정</a>
-	<a href="/board/delete?bno=${detail.bno}" class="btn btn-danger">삭제</a>
+	<a style="margin: 10px 0px; 10px; 10px;" href="/board/page/1/20" class="btn btn-primary">list</a>
+	<a style="margin: 10px 0px; "href="/board/update?bno=${detail.bno}" class="btn btn-secondary">수정</a>
+	<a style="margin: 10px 0px; "href="/board/delete?bno=${detail.bno}" class="btn btn-danger">삭제</a>
 	</menu>
+</div>	
 <section class="container">
-	<table class="table">
+	<table class="table table-bordered">
 		<tbody>
 				<tr>
 					<th>Bno</th>		<td>${detail.bno}</td>
@@ -190,19 +192,21 @@ number li a {
 				</tr>	
 		</tbody>
 	</table>
-	<div class="well" style="">
-	<p>${detail.content}</p>
+	<div class="well border" style="">
+	<br> 
+	<p>&nbsp; ${detail.content}</p>
 	</div>
 	<br>
 	<hr>
 	<br>
-	<div class="container">
-        <label for="content">comment</label>
+<div class="card container">
+	<div class="" style="margin: 20px;">
+        <label for="content" class="">comment</label>
         <form name="commentInsertForm">
             <div class="input-group">
                <input type="hidden" name="bno" value="${detail.bno}"/>
                <input type="text" class="form-control" id="content" name="content" placeholder="내용을 입력하세요.">
-              
+        	   <hr>
                <sec:authorize access="!isAuthenticated()">
 				<button class="ml-3 btn " type="button" ><a  style="text-decoration: none;" href="/user/login">로그인</a></button>
 				</sec:authorize>
@@ -214,7 +218,6 @@ number li a {
               </div>
         </form>
     </div>
-<div class="card">
         <div class="commentList container" style=""></div>
 </div>
 	
@@ -263,7 +266,7 @@ window.onload = function() {
 	    	}
 	       console.log(11);
 	       repeatTimeout();
-		},10); 
+		},100); 
  	}
 
 

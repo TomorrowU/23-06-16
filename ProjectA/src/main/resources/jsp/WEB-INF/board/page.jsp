@@ -113,6 +113,7 @@ ul li:nth-child(odd) {
 .card-body .title {
 	width: 70%;
 	text-align: left;
+	text-align: center;
 }
 
 .card-body .delete button {
@@ -161,7 +162,7 @@ number li a {
 
 </head>
 <body>
-<div class="card" style="height: 180px;">
+<div class="card" style="height: 2000px;">
 	<div class="card-header">
 	<sec:authorize access="isAuthenticated()">
 		<h2 style="text-align: center; margin-top: 40px;"><sec:authentication property="name"/>님 환영합니다</h2>
@@ -172,11 +173,9 @@ number li a {
 		<a href="/user/login   "><h5 style="text-align: center; margin-top: 40px; margin-bottom: 0px;">로그인</h5></a>
 	</sec:authorize>
 	</div>
-</div>
-<div class="card">
 	<div class="card-header"><h1>Community</h1></div>
 	<div class="card-body">
-		<form action="/board/search/1/5" method="get">
+		<form action="/board/search/1/20" method="get">
 			<input type="search" name="subject" id="subject" placeholder="검색어를 입력하세요.">
 			<input type="submit" class="search" style="padding: 10px 15px 10px 15px;
 			margin-left: 10px;
@@ -190,7 +189,7 @@ number li a {
 		
 		<c:forEach var="b" items="${list}">
 		<div class="content-box">
-			<div class="check"><input type="checkbox" name="" id=""></div>
+			<span>${b.bno}</span>
 			<div class="title"><a href="/board/detail/${b.bno}">${b.subject}</a></div>
 		</div>	
 		</c:forEach>

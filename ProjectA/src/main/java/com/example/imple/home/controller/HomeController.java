@@ -10,6 +10,6 @@ public class HomeController {
 	@GetMapping("/")
 	String home() {
 		
-		return "redirect:/board/page/1/5";
+		return "redirect:/board/page/1/20";
 	}
 }

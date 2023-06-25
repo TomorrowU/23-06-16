@@ -46,7 +46,7 @@ public class SecurityConfig {
 		
 		http.formLogin(login->{
 			login.loginPage("/user/login");
-			login.defaultSuccessUrl("/board/page/1/5",true);
+			login.defaultSuccessUrl("/board/page/1/20",true);
 			login.failureHandler((request,response,e)->{
 				request.setAttribute("exception", e);
 				request.getRequestDispatcher("/user/login-fail").forward(request, response);

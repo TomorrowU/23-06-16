@@ -162,13 +162,20 @@ number li a {
 
 </head>
 <body>
-<sec:authorize access="isAuthenticated()">
-	<li><a href="/user/logout   ">/user/logout</a></li>
-</sec:authorize>
-<div class="card">
+<div class="card" style="height: 1000px;">
+	<div class="card-header">
+	<sec:authorize access="isAuthenticated()">
+		<h2 style="text-align: center; margin-top: 40px;"><sec:authentication property="name"/>님 환영합니다</h2>
+		<a href="/user/logout   "><h5 style="text-align: center; margin-top: 40px; margin-bottom: 0px;">로그아웃</h5></a>
+	</sec:authorize>
+	<sec:authorize access="!isAuthenticated()">
+		<h2 style="text-align: center; margin-top: 40px;" >로그인이 필요합니다</h2>
+		<a href="/user/login   "><h5 style="text-align: center; margin-top: 40px; margin-bottom: 0px;">로그인</h5></a>
+	</sec:authorize>
+	</div>
 	<div class="card-header"><h1>Community</h1></div>
 	<div class="card-body">
-		<form action="/board/page/1/5" method="get">
+		<form action="/board/page/1/20" method="get">
 			<input type="search"  placeholder="검색어를 입력하세요.">
 			<input dis type="submit" class="search" style="padding: 10px 15px 10px 15px;
 			margin-left: 10px;

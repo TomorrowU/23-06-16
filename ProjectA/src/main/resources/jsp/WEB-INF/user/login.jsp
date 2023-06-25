@@ -14,12 +14,37 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
-
+<link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
 <title>login.jsp</title>
+<style>
+* {
+	margin: 0;
+	padding:0;
+	font-family: 'GmarketSans';
+	font-size: 26px;
+}	
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	text-align: center;
+	background-color: #242424;
+	color:#78b862;
+}
+
+#create {
+	background-color: #242424;
+}
+
+</style>
 </head>
 <body>
+
+<div id="create" class="container-fluid p-5">
 <h1>Login 로그인</h1>
-<hr>
+</div>
 <a href="/">HOME</a>
 <hr>
 <section class="container">
@@ -30,17 +55,13 @@
 		<hr>
 		<input name="remember-me" type="checkbox"> Remember me
 		<hr>
-		<input class="btn btn-primary" type="submit"/>
+		<input class="btn btn" style="background-color: #78b862; color: black;" type="submit"/>
 		<hr>
 	</form>
 	
-	<a href="/user/create">회원가입</a>
+	<a class="btn" style="background-color: #78b862; color: black;" href="/user/create">회원가입</a>
 </section>
 <hr>
-
-
-
-
 
 <c:if test="${exception ne null}">
 	<h1>${exception.message}</h1>

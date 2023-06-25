@@ -57,7 +57,7 @@ public class BoardDeleteController implements DeleteController<BoardDTO> {
 
 		
 		
-		return "redirect:/board/page/1/5";
+		return "redirect:/board/page/1/20";
 	}
 
 }
